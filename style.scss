@@ -1,0 +1,101 @@
+// @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Press+Start+2P&display=swap');
+
+:root {
+  --game-ui-size: 500px;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  display: grid;
+  // justify-content: center;
+  // align-items: center;
+  background-color: #1c1e2a;
+  color: white;
+
+  >* {
+    grid-area: 1 / 1;
+  }
+}
+
+canvas {
+  border-radius: 8px;
+  pointer-events: none;
+  align-self: center;
+  justify-self: center;
+}
+
+#heading {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  pointer-events: none;
+  animation-name: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
+  .title {
+    font-size: 24px;
+  }
+
+  .small {
+    font-size: 12px;
+  }
+}
+
+@keyframes pulse {
+  from {
+    scale: 1;
+  }
+
+  to {
+    scale: 1.2;
+  }
+}
+
+.game-ui {
+  height: calc(var(--game-ui-size) + 100px);
+  aspect-ratio: 1;
+  align-self: center;
+  justify-self: center;
+
+  .head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 8px;
+
+    span {
+      font-size: 18px;
+      font-weight: lighter;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.mb-16 {
+  margin-bottom: 16px !important;
+}
+
+.d-none {
+  display: none !important;
+}
